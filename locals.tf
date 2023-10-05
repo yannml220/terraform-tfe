@@ -15,7 +15,7 @@ locals {
 
         terraform-github-workspace = {
             description = "terraform github workspace description"
-            execution_mode = "local"
+            execution_mode = "remote"
             project_id = module.project["terraform-tfe-project"].id
             vcs_repo_identifier = "${var.github_organization_name}/terraform-github"
         }
