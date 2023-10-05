@@ -10,7 +10,14 @@ locals {
             description = "terraform tfe workspace description"
             execution_mode = "remote"
             project_id = module.project["terraform-tfe-project"].id
-            vcs_repo_identifier = "yannml220/terraform-tfe"
+            vcs_repo_identifier = "${var.github_organization_name}/terraform-tfe"
+        }
+
+        terraform-github-workspace = {
+            description = "terraform github workspace description"
+            execution_mode = "local"
+            project_id = module.project["terraform-tfe-project"].id
+            vcs_repo_identifier = "${var.github_organization_name}/terraform-github"
         }
     }
 }
